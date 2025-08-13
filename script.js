@@ -1,4 +1,3 @@
-// Modal functionality
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
     document.body.style.overflow = "hidden"; // Prevent background scrolling
@@ -31,17 +30,4 @@ document.addEventListener('keydown', function(event) {
             }
         }
     }
-});
-
-// Active navigation highlighting
-document.addEventListener('DOMContentLoaded', function() {
-    const currentLocation = location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentLocation) {
-            link.style.color = '#2b6cb0';
-            link.style.fontWeight = '500';
-        }
-    });
 });
