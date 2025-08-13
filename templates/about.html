@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">Hello, I'm Sam 👋</h1>
+        
+        <div class="intro-text">
+            <p>I'm a sophomore at Stanford University studying Economics with a minor in Energy Science & Engineering. My work focuses on the intersection of energy systems, climate technology, and economic policy.</p>
+            
+            <p>I'm passionate about using data-driven approaches to solve complex problems in sustainable energy and have experience in grid modeling, renewable energy development, and climate tech venture capital.</p>
+            
+            <p>When I'm not diving into research or coursework, I enjoy hiking in the Bay Area, playing tennis, and exploring new coffee shops around Stanford. I'm also an avid reader of science fiction and enjoy discussing energy policy with anyone willing to listen.</p>
+        </div>
+
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong> sjonker@stanford.edu
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong> San Mateo, CA
+            </div>
+            <div class="contact-item">
+                <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sam-jonker" target="_blank">sam-jonker</a>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <a href="{{ url_for('experience') }}" class="btn-primary">View Experience</a>
+            <a href="{{ url_for('download_resume') }}" class="btn-secondary">Download Resume</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Sam Jonker{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Projects</h1>
+    <p>A selection of academic research and technical projects</p>
+</div>
+
+<div class="projects-grid">
+    <div class="project-card" onclick="openModal('project1')">
+        <h3>Energy Grid Optimization Model</h3>
+        <div class="project-meta">
+            <span class="project-type">Research Project</span>
+            <span class="project-date">Spring 2024</span>
+        </div>
+        <p>Developed a comprehensive computational model analyzing renewable energy integration patterns across regional electrical grids. Utilized Python and machine learning algorithms to optimize energy distribution efficiency.</p>
+        <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">Energy Systems</span>
+        </div>
+        <div class="click-hint">Click to view details →</div>
+    </div>
+
+    <div class="project-card" onclick="openModal('project2')">
+        <h3>Climate Policy Impact Analysis</h3>
+        <div class="project-meta">
+            <span class="project-type">Economics Paper</span>
+            <span class="project-date">Fall 2023</span>
+        </div>
+        <p>Conducted econometric analysis of federal climate legislation effectiveness on regional carbon emissions. Applied statistical modeling techniques to evaluate policy outcomes across different geographic regions.</p>
+        <div class="project-tags">
+            <span class="tag">R</span>
+            <span class="tag">Econometrics</span>
+            <span class="tag">Policy Analysis</span>
+        </div>
+        <div class="click-hint">Click to view details →</div>
+    </div>
+</div>
+
+<!-- Modal for Project 1 -->
+<div id="project1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('project1')">&times;</span>
+        
+        <div class="modal-header">
+            <h2>Energy Grid Optimization Model</h2>
+            <div class="modal-meta">
+                <span class="project-type">Research Project</span>
+                <span class="project-date">Spring 2024</span>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="project-image-placeholder">
+                <!-- Add your project image here -->
+                <div class="image-placeholder">
+                    <p>Project visualization or diagram would go here</p>
+                </div>
+            </div>
+            
+            <div class="project-details">
+                <h3>Overview</h3>
+                <p>This comprehensive computational model represents months of research into renewable energy integration patterns across regional electrical grids. The project emerged from my coursework in Energy Science & Engineering and my internship experience at SLAC National Laboratory.</p>
+                
+                <h3>Technical Approach</h3>
+                <p>I developed the model using Python, implementing machine learning algorithms including:</p>
+                <ul>
+                    <li>Random Forest regression for energy demand prediction</li>
+                    <li>K-means clustering for grid segmentation analysis</li>
+                    <li>Optimization algorithms for distribution efficiency</li>
+                </ul>
+                
+                <h3>Key Findings</h3>
+                <p>The model successfully identified optimal renewable energy integration points that could improve grid efficiency by up to 23% while maintaining stability during peak demand periods. The analysis revealed that distributed solar installations, when properly coordinated, could significantly reduce transmission losses.</p>
+                
+                <h3>Impact & Applications</h3>
+                <p>This research contributes to understanding how regional grids can better accommodate renewable energy sources while maintaining reliability. The model framework could be adapted for use by utility companies planning renewable energy investments.</p>
+                
+                <div class="project-links">
+                    <a href="#" class="btn-secondary">View Code Repository</a>
+                    <a href="#" class="btn-secondary">Download Paper</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Project 2 -->
+<div id="project2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('project2')">&times;</span>
+        
+        <div class="modal-header">
+            <h2>Climate Policy Impact Analysis</h2>
+            <div class="modal-meta">
+                <span class="project-type">Economics Paper</span>
+                <span class="project-date">Fall 2023</span>
+            </div>
+        </div>
+        
+        <div class="modal-body">
+            <div class="project-image-placeholder">
+                <!-- Add your project charts/graphs here -->
+                <div class="image-placeholder">
+                    <p>Statistical analysis charts and regional comparison graphs would go here</p>
+                </div>
+            </div>
+            
+            <div class="project-details">
+                <h3>Research Question</h3>
+                <p>How effective have federal climate legislation initiatives been in reducing regional carbon emissions, and what factors contribute to varying success rates across different geographic areas?</p>
+                
+                <h3>Methodology</h3>
+                <p>Using R and econometric modeling techniques, I analyzed emissions data from the EPA alongside policy implementation timelines across 12 states. The study employed:</p>
+                <ul>
+                    <li>Difference-in-differences analysis to isolate policy effects</li>
+                    <li>Panel data regression with fixed effects</li>
+                    <li>Robustness testing with alternative model specifications</li>
+                </ul>
+                
+                <h3>Key Results</h3>
+                <p>The analysis revealed that federal climate policies showed a 15-18% greater impact in states with complementary state-level regulations. Regional economic factors, particularly industrial composition, significantly influenced policy effectiveness.</p>
+                
+                <h3>Policy Implications</h3>
+                <p>The findings suggest that federal climate policy success depends heavily on coordinated state-level implementation and consideration of regional economic structures. This has important implications for designing future climate legislation.</p>
+                
+                <div class="project-links">
+                    <a href="#" class="btn-secondary">View Full Paper</a>
+                    <a href="#" class="btn-secondary">Download Dataset</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+    }
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const modals = document.getElementsByClassName('modal');
+        for (let i = 0; i < modals.length; i++) {
+            if (modals[i].style.display === "block") {
+                modals[i].style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        }
+    }
+});
+</script>
+
+{% endblock %}
