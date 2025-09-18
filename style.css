@@ -275,7 +275,7 @@ body {
     animation: modalSlideIn 0.3s ease-out;
 }
 
-@keyframes modalSlideIn {
+/* @keyframes modalSlideIn {
     from {
         opacity: 0;
         transform: translateY(-50px);
@@ -284,7 +284,7 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 .close {
     color: #718096;
